@@ -1,0 +1,22 @@
+analyzer:
+  exclude:
+    - "**/build/**"
+    - "**/.*/**"
+    - "**/.dart_tool/**"
+    - "**/ios/Pods/**"
+    - "**/macos/Pods/**"
+    - "**/generated/**"
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
+
+linter:
+  rules:
+    avoid_print: true
+    cancel_subscriptions: true
+    prefer_single_quotes: true
+    prefer_const_constructors: true
+    prefer_final_locals: true
+    use_super_parameters: true
+    directives_ordering: true
+    avoid_relative_lib_imports: true
+    public_member_api_docs: false

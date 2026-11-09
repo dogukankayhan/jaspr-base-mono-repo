@@ -1,6 +1,8 @@
 # Miscellaneous
+# (*.lock is intentionally NOT ignored: pubspec.lock and Podfile.lock are
+#  committed so every clone resolves the exact same versions — the Jaspr
+#  pins depend on it, see CLAUDE.md "Web (Jaspr)")
 *.class
-*.lock
 *.log
 *.pyc
 *.swp
@@ -8,6 +10,26 @@
 .history
 
 
+
+# IDE / editor
+.idea/
+*.iml
+*.ipr
+*.iws
+# Share only the run configurations (flavor + entrypoint); keep the rest local.
+.vscode/*
+!.vscode/launch.json
+*.code-workspace
+.fleet/
+.history/
+
+# Local tooling
+.fvm/
+.claude/settings.local.json
+pubspec_overrides.yaml
+.env
+.env.*
+!.env.example
 
 # Flutter repo-specific
 /bin/cache/
@@ -88,6 +110,8 @@ unlinked_spec.ds
 **/ios/Runner/GeneratedPluginRegistrant.*
 
 # macOS
+.DS_Store
+**/.DS_Store
 **/Flutter/ephemeral/
 **/Pods/
 **/macos/Flutter/GeneratedPluginRegistrant.swift
@@ -106,6 +130,10 @@ unlinked_spec.ds
 
 # Coverage
 coverage/
+
+# Generated i18n output — regenerate with `melos run gen:i18n`; the header
+# carries a build timestamp and string count, so it conflicts on every merge.
+apps/mobile/lib/core/localization/i18n/strings*.g.dart
 
 # Symbols
 app.*.symbols

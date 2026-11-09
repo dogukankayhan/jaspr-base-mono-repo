@@ -1,0 +1,17 @@
+name: jaspr_kit_auth
+description: Browser adapters for kit_auth (TokenStore over Web Storage). Web twin of flutter_kit_auth.
+version: 0.0.1
+publish_to: none
+resolution: workspace
+
+# WEB ONLY (package:web / dart:js_interop) — must never depend on Flutter.
+environment:
+  sdk: ^3.10.0
+
+dependencies:
+  kit_auth:
+    path: ../kit_auth
+  web: ^1.1.0
+
+dev_dependencies:
+  lints: ^6.0.0

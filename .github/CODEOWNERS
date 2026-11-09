@@ -1,0 +1,17 @@
+# Default: tüm dosyalar için otomatik reviewer ataması
+*                               @dogukankayhan
+
+# Paket sahipliği
+/packages/flutter_kit_network/  @dogukankayhan
+/packages/flutter_kit_core/     @dogukankayhan
+/packages/flutter_kit_auth/     @dogukankayhan
+/packages/flutter_kit_ui/       @dogukankayhan
+/packages/flutter_kit_firebase/ @dogukankayhan
+
+# CI/CD — workflow değişiklikleri her zaman review gerektirir
+/.github/                       @dogukankayhan
+
+# Mimari konfigürasyonlar
+/melos.yaml                     @dogukankayhan
+/pubspec.yaml                   @dogukankayhan
+/analysis_options.yaml          @dogukankayhan

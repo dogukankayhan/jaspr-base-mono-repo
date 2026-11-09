@@ -1,0 +1,21 @@
+name: jaspr_kit_core
+description: Jaspr view layer for the kit — BaseBlocView component mirroring flutter_kit_core's widget.
+version: 0.0.1
+publish_to: none
+resolution: workspace
+
+# JASPR ONLY — must never depend on Flutter.
+environment:
+  sdk: ^3.10.0
+
+dependencies:
+  kit_core:
+    path: ../kit_core
+  bloc: ^9.1.0
+  jaspr: 0.23.1
+  # Browser APIs with VM stubs (jaspr's own choice) — keeps components testable with jaspr_test.
+  universal_web: ^1.1.0
+
+dev_dependencies:
+  jaspr_test: 0.23.1
+  lints: ^6.0.0

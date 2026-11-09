@@ -1,0 +1,40 @@
+name: Android Staging
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  build-and-distribute:
+    name: Build & Upload to Firebase (Staging)
+    runs-on: self-hosted
+
+    defaults:
+      run:
+        working-directory: apps/mobile
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Bootstrap monorepo
+        working-directory: .
+        run: |
+          dart pub global activate melos
+          melos bootstrap
+
+      - name: Build APK (Staging - Debug)
+        run: flutter build apk --flavor staging -t lib/main_staging.dart --debug
+
+#      - name: Upload to Firebase App Distribution
+#        env:
+#          GOOGLE_APPLICATION_CREDENTIALS_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+#        run: |
+#          echo "$GOOGLE_APPLICATION_CREDENTIALS_JSON" > /tmp/service_account.json
+#          export GOOGLE_APPLICATION_CREDENTIALS=/tmp/service_account.json
+#          firebase appdistribution:distribute \
+#            build/app/outputs/flutter-apk/app-staging-debug.apk \
+#            --app ${{ secrets.FIREBASE_STAGING_APP_ID }} \
+#            --groups "testers" \
+#            --release-notes "PR: ${{ github.event.pull_request.title }} | Branch: ${{ github.head_ref }} | Commit: ${{ github.sha }}"
+#          rm /tmp/service_account.json

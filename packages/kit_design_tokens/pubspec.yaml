@@ -1,0 +1,13 @@
+name: kit_design_tokens
+description: Pure-Dart design tokens (colors) shared by flutter_kit_ui and jaspr_kit_ui.
+version: 0.0.1
+publish_to: none
+resolution: workspace
+
+# PURE DART — must never depend on Flutter or Jaspr.
+environment:
+  sdk: ^3.9.0
+
+dev_dependencies:
+  lints: ^6.0.0
+  test: ^1.25.0

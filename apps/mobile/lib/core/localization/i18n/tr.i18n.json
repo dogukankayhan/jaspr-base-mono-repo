@@ -1,0 +1,132 @@
+{
+  "common": {
+    "ok": "Tamam",
+    "cancel": "İptal",
+    "retry": "Tekrar Dene",
+    "unknown": "Bilinmiyor"
+  },
+  "login": {
+    "appName": "Base Project",
+    "subtitle": "Clean Architecture · Monorepo",
+    "title": "Giriş Yap",
+    "emailLabel": "E-posta",
+    "emailHint": "ornek@posta.com",
+    "passwordLabel": "Şifre",
+    "passwordHint": "••••••••",
+    "submitButton": "Giriş Yap",
+    "demoButton": "Demo Hesabı Doldur",
+    "orDivider": "veya",
+    "googleTooltip": "Google ile Giriş",
+    "appleTooltip": "Apple ile Giriş",
+    "noAccount": "Hesabınız yok mu? ",
+    "registerLink": "Kayıt Ol"
+  },
+  "register": {
+    "title": "Kayıt Ol",
+    "subtitle": "Yeni bir profil oluşturun",
+    "backTooltip": "Giriş Yap'a dön",
+    "firstNameLabel": "Ad",
+    "firstNameHint": "Adınız",
+    "lastNameLabel": "Soyad",
+    "lastNameHint": "Soyadınız",
+    "emailLabel": "E-posta",
+    "emailHint": "ornek@posta.com",
+    "passwordLabel": "Şifre",
+    "passwordHint": "••••••••",
+    "submitButton": "Hesap Oluştur",
+    "hasAccount": "Zaten hesabınız var mı? ",
+    "loginLink": "Giriş Yap"
+  },
+  "favorites": {
+    "title": "Favorilerim",
+    "clearTooltip": "Tümünü Temizle",
+    "clearTitle": "Favorileri Temizle?",
+    "clearConfirm": "Tüm favori Pokemonları kaldırmak istediğinize emin misiniz? Bu işlem geri alınamaz.",
+    "clearButton": "Tümünü Sil",
+    "clearSuccess": "Tüm favoriler temizlendi",
+    "removeTitle": "Favorilerden Kaldır?",
+    "removeConfirm": "{name} favorilerinizden kaldırılsın mı?",
+    "removeButton": "Kaldır",
+    "removeSuccess": "{name} favorilerden kaldırıldı",
+    "removeTooltip": "Favorilerden Çıkar",
+    "emptyPokemon": "Henüz favori Pokemon yok",
+    "emptyPokemonHint": "Pokemon sekmesinden ❤ ile ekleyebilirsin"
+  },
+  "pokemon": {
+    "searchHint": "Pokémon Ara...",
+    "detail": {
+      "error": "Hata",
+      "tabs": {
+        "about": "Hakkında",
+        "stats": "Statlar",
+        "evolution": "Evrim",
+        "moves": "Hamleler"
+      },
+      "about": {
+        "species": "Tür",
+        "height": "Boy",
+        "weight": "Kilo",
+        "abilities": "Yetenekler",
+        "habitat": "Habitat",
+        "breeding": "Üreme",
+        "eggGroups": "Yumurta Grupları",
+        "gender": "Cinsiyet",
+        "genderless": "Cinsiyetsiz"
+      },
+      "stats": {
+        "title": "Temel İstatistikler",
+        "total": "Toplam",
+        "hp": "HP",
+        "attack": "Saldırı",
+        "defense": "Savunma",
+        "spAttack": "Öz. Saldırı",
+        "spDefense": "Öz. Savunma",
+        "speed": "Hız"
+      },
+      "evolution": {
+        "noData": "Evrim verisi bulunamadı",
+        "chainTitle": "Evrim Zinciri",
+        "simulatorButton": "Evrim Simülatörünü Aç"
+      },
+      "moves": {
+        "learnMethod": "Öğrenme yöntemi: {method}"
+      }
+    }
+  },
+  "components": {
+    "tabLabel": "Bileşenler",
+    "title": "Bileşen Vitrini",
+    "langToggleTooltip": "Dil Değiştir",
+    "themeToggleTooltip": "Tema Değiştir",
+    "nameLabel": "Ad",
+    "nameHint": "Adınızı girin",
+    "surnameLabel": "Soyad",
+    "surnameHint": "Soyadınızı girin",
+    "fullNameLabel": "Ad Soyad",
+    "fullNameHint": "Ad ve soyadınızı girin",
+    "ageLabel": "Yaş",
+    "ageHint": "örn. 25",
+    "ageWarning": "18 yaşından küçükler için bazı özellikler kısıtlı olabilir",
+    "birthDateLabel": "Doğum Tarihi",
+    "birthDateHint": "GG.AA.YYYY",
+    "phoneLabel": "Telefon",
+    "phoneHint": "(5XX) XXX XX XX",
+    "ibanLabel": "IBAN",
+    "ibanHint": "TR00 0000 0000 0000 0000 0000",
+    "emailLabel": "E-posta",
+    "emailHint": "ornek@mail.com",
+    "passwordLabel": "Şifre",
+    "passwordHint": "••••••••",
+    "urlLabel": "Web Sitesi",
+    "urlHint": "sitenizinadı.com",
+    "notesLabel": "Notlar",
+    "notesHint": "Notlarınızı girin...",
+    "validateButton": "Doğrula",
+    "passwordMinLength": "Şifre en az 8 karakter olmalıdır"
+  },
+  "countryPicker": {
+    "title": "Ülke Seç",
+    "searchHint": "Ülke veya kod ara",
+    "emptyMessage": "Eşleşen ülke yok"
+  }
+}

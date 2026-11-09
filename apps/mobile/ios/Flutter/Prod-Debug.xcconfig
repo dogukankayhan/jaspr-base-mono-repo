@@ -1,0 +1,11 @@
+#include? "Pods/Target Support Files/Pods-Runner/Pods-Runner.debug-prod.xcconfig"
+#include "Generated.xcconfig"
+
+PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.baseapp
+FLUTTER_TARGET = lib/main_prod.dart
+DISPLAY_NAME = FlutterBaseKit
+ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon-prod
+BASE_URL_SCHEME = https
+BASE_URL_HOST = pokeapi.co/api/v2/
+GOOGLE_SERVER_CLIENT_ID = YOUR_PROD_GOOGLE_SERVER_CLIENT_ID
+REVERSED_CLIENT_ID = YOUR_PROD_REVERSED_CLIENT_ID

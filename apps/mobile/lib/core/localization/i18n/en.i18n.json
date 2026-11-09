@@ -1,0 +1,132 @@
+{
+  "common": {
+    "ok": "OK",
+    "cancel": "Cancel",
+    "retry": "Try Again",
+    "unknown": "Unknown"
+  },
+  "login": {
+    "appName": "Base Project",
+    "subtitle": "Clean Architecture · Monorepo",
+    "title": "Sign In",
+    "emailLabel": "Email",
+    "emailHint": "example@email.com",
+    "passwordLabel": "Password",
+    "passwordHint": "••••••••",
+    "submitButton": "Sign In",
+    "demoButton": "Fill Demo Account",
+    "orDivider": "or",
+    "googleTooltip": "Sign In with Google",
+    "appleTooltip": "Sign In with Apple",
+    "noAccount": "Don't have an account? ",
+    "registerLink": "Sign Up"
+  },
+  "register": {
+    "title": "Sign Up",
+    "subtitle": "Create a new profile",
+    "backTooltip": "Back to Sign In",
+    "firstNameLabel": "First Name",
+    "firstNameHint": "Your First Name",
+    "lastNameLabel": "Last Name",
+    "lastNameHint": "Your Last Name",
+    "emailLabel": "Email",
+    "emailHint": "example@email.com",
+    "passwordLabel": "Password",
+    "passwordHint": "••••••••",
+    "submitButton": "Create Account",
+    "hasAccount": "Already have an account? ",
+    "loginLink": "Sign In"
+  },
+  "favorites": {
+    "title": "My Favorites",
+    "clearTooltip": "Clear All",
+    "clearTitle": "Clear Favorites?",
+    "clearConfirm": "Are you sure you want to remove all favorite Pokémon? This action cannot be undone.",
+    "clearButton": "Delete All",
+    "clearSuccess": "All favorites cleared",
+    "removeTitle": "Remove from Favorites?",
+    "removeConfirm": "Remove {name} from your favorites?",
+    "removeButton": "Remove",
+    "removeSuccess": "{name} removed from favorites",
+    "removeTooltip": "Remove from Favorites",
+    "emptyPokemon": "No favorite Pokémon yet",
+    "emptyPokemonHint": "Add Pokémon with ❤ from the Pokémon tab"
+  },
+  "pokemon": {
+    "searchHint": "Search Pokémon...",
+    "detail": {
+      "error": "Error",
+      "tabs": {
+        "about": "About",
+        "stats": "Stats",
+        "evolution": "Evolution",
+        "moves": "Moves"
+      },
+      "about": {
+        "species": "Species",
+        "height": "Height",
+        "weight": "Weight",
+        "abilities": "Abilities",
+        "habitat": "Habitat",
+        "breeding": "Breeding",
+        "eggGroups": "Egg Groups",
+        "gender": "Gender",
+        "genderless": "Genderless"
+      },
+      "stats": {
+        "title": "Base Stats",
+        "total": "Total",
+        "hp": "HP",
+        "attack": "Attack",
+        "defense": "Defense",
+        "spAttack": "Sp. Attack",
+        "spDefense": "Sp. Defense",
+        "speed": "Speed"
+      },
+      "evolution": {
+        "noData": "No evolution data found",
+        "chainTitle": "Evolution Chain",
+        "simulatorButton": "Open Evolution Simulator"
+      },
+      "moves": {
+        "learnMethod": "Learn method: {method}"
+      }
+    }
+  },
+  "components": {
+    "tabLabel": "Components",
+    "title": "Component Showcase",
+    "langToggleTooltip": "Toggle Language",
+    "themeToggleTooltip": "Toggle Theme",
+    "nameLabel": "Name",
+    "nameHint": "Enter name",
+    "surnameLabel": "Surname",
+    "surnameHint": "Enter surname",
+    "fullNameLabel": "Full Name",
+    "fullNameHint": "Enter full name",
+    "ageLabel": "Age",
+    "ageHint": "e.g. 25",
+    "ageWarning": "Some features may be restricted for users under 18",
+    "birthDateLabel": "Birth Date",
+    "birthDateHint": "DD.MM.YYYY",
+    "phoneLabel": "Phone",
+    "phoneHint": "(5XX) XXX XX XX",
+    "ibanLabel": "IBAN",
+    "ibanHint": "TR00 0000 0000 0000 0000 0000",
+    "emailLabel": "Email",
+    "emailHint": "example@email.com",
+    "passwordLabel": "Password",
+    "passwordHint": "••••••••",
+    "urlLabel": "Website",
+    "urlHint": "yourwebsite.com",
+    "notesLabel": "Notes",
+    "notesHint": "Enter your notes...",
+    "validateButton": "Validate",
+    "passwordMinLength": "Password must be at least 8 characters"
+  },
+  "countryPicker": {
+    "title": "Select Country",
+    "searchHint": "Search country or code",
+    "emptyMessage": "No matching country"
+  }
+}

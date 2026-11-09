@@ -1,0 +1,147 @@
+name: flutter_base_kit_workspace
+description: Monorepo workspace root — not a publishable package.
+publish_to: none
+
+environment:
+  sdk: ^3.9.0
+
+workspace:
+  - apps/mobile
+  - apps/web
+  - apps/web_ssr_demo   # experiment: server-side rendering (SSR)
+  # Pure Dart — shared by mobile (Flutter) and web (Jaspr)
+  - packages/kit_network
+  - packages/kit_core
+  - packages/kit_auth
+  - packages/kit_design_tokens
+  - packages/app_shared
+  # Jaspr
+  - packages/jaspr_kit_core
+  - packages/jaspr_kit_ui
+  - packages/jaspr_kit_network
+  - packages/jaspr_kit_auth
+  # Flutter
+  - packages/flutter_kit_network
+  - packages/flutter_kit_core
+  - packages/flutter_kit_auth
+  - packages/flutter_kit_firebase
+  - packages/flutter_kit_ui
+
+
+dev_dependencies:
+  melos: ^7.8.0
+
+melos:
+  command:
+    bootstrap: {}
+
+  scripts:
+    analyze:
+      run: dart analyze .
+      description: Analyze all packages
+      exec:
+        concurrency: 4
+
+    # Packages without a test/ dir (e.g. apps/web) must not fail the run.
+    format:
+      run: dart format $(ls -d lib test 2>/dev/null)
+      description: Format all packages
+      exec:
+        concurrency: 4
+
+    format:check:
+      run: dart format --output=none --set-exit-if-changed $(ls -d lib test 2>/dev/null)
+      description: Check formatting without modifying files
+      exec:
+        concurrency: 4
+
+    # ─── Tests ─────────────────────────────────────────────────────────────
+    # Flutter packages run under `flutter test`; pure-Dart (kit_*, app_shared)
+    # and Jaspr packages under `dart test` — no Flutter SDK needed for them.
+    test:
+      run: melos run test:flutter --no-select && melos run test:dart --no-select
+      description: Run tests in all packages (Flutter + pure Dart/Jaspr)
+
+    test:flutter:
+      run: flutter test
+      description: Run tests in Flutter packages
+      exec:
+        concurrency: 2
+      packageFilters:
+        flutter: true
+        dirExists: test
+
+    test:dart:
+      run: dart test
+      description: Run tests in pure-Dart and Jaspr packages
+      exec:
+        concurrency: 2
+      packageFilters:
+        flutter: false
+        dirExists: test
+
+    test:unit:
+      run: melos run test:unit:flutter --no-select && melos run test:unit:dart --no-select
+      description: Run only unit tests (no network calls)
+
+    test:unit:flutter:
+      run: flutter test --exclude-tags integration
+      exec:
+        concurrency: 2
+      packageFilters:
+        flutter: true
+        dirExists: test
+
+    test:unit:dart:
+      run: dart test --exclude-tags integration
+      exec:
+        concurrency: 2
+      packageFilters:
+        flutter: false
+        dirExists: test
+
+    integration:
+      run: flutter test --tags integration
+      description: Run integration tests (hits real network — DummyJSON + httpbin)
+      exec:
+        concurrency: 1
+      packageFilters:
+        flutter: true
+        dirExists: test
+
+    # ─── Architecture ──────────────────────────────────────────────────────
+    check:pure:
+      run: bash scripts/check_pure_packages.sh
+      description: Verify package boundaries (kit_*/app_shared pure Dart, no Flutter in Jaspr, no Jaspr in Flutter)
+
+    # ─── Generators ────────────────────────────────────────────────────────
+    gen:feature:
+      run: dart scripts/gen_feature.dart
+      description: Yeni feature scaffold oluştur (interaktif) — shared bloc + mobile/web view
+
+    gen:i18n:
+      run: cd apps/mobile && dart run slang
+      description: Generate strings*.g.dart from the .i18n.json sources (REQUIRED after a fresh checkout)
+
+    gen:mocks:
+      run: dart run build_runner build --delete-conflicting-outputs
+      description: Regenerate Mockito mocks
+      exec:
+        concurrency: 1
+      packageFilters:
+        dependsOn: mockito
+        dirExists: test
+
+    # ─── Web (Jaspr) ───────────────────────────────────────────────────────
+    # Requires the CLI once: dart pub global activate jaspr_cli 0.23.1
+    web:serve:
+      run: cd apps/web && jaspr serve
+      description: Run the Jaspr web app with hot reload (http://localhost:8080)
+
+    web:build:
+      run: cd apps/web && jaspr build
+      description: Build the Jaspr web app to apps/web/build/jaspr
+
+    web:ssr:serve:
+      run: cd apps/web_ssr_demo && jaspr serve
+      description: Experiment — home + detail rendered on the server (SSR), http://localhost:8080

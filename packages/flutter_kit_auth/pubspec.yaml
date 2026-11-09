@@ -1,0 +1,42 @@
+name: flutter_kit_auth
+description: Auth manager — login, register, social sign-in, token management.
+version: 0.0.1
+publish_to: none
+resolution: workspace
+
+environment:
+  sdk: ^3.9.0
+  flutter: ">=3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Pure-Dart halves (shared with apps/web)
+  kit_network:
+    path: ../kit_network
+  kit_core:
+    path: ../kit_core
+  kit_auth:
+    path: ../kit_auth
+
+  flutter_kit_network:
+    path: ../flutter_kit_network
+
+  flutter_kit_core:
+    path: ../flutter_kit_core
+
+  flutter_bloc: ^9.1.1
+  equatable: ^2.0.7
+  dio: ^5.9.0
+
+  get_it: ^9.2.0
+  flutter_secure_storage: ^10.0.0
+  google_sign_in: ^7.2.0
+  sign_in_with_apple: ^8.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  mockito: ^5.5.1

@@ -1,0 +1,54 @@
+name: flutter_base_kit_web
+description: Jaspr web app — shares app_shared (endpoints → blocs) with apps/mobile.
+version: 0.0.1
+publish_to: none
+resolution: workspace
+
+environment:
+  sdk: ^3.10.0
+
+dependencies:
+  # Shared, platform-neutral layers
+  app_shared:
+    path: ../../packages/app_shared
+  kit_network:
+    path: ../../packages/kit_network
+  kit_core:
+    path: ../../packages/kit_core
+  kit_auth:
+    path: ../../packages/kit_auth
+  kit_design_tokens:
+    path: ../../packages/kit_design_tokens
+  # Jaspr view layer
+  jaspr_kit_core:
+    path: ../../packages/jaspr_kit_core
+  jaspr_kit_ui:
+    path: ../../packages/jaspr_kit_ui
+  jaspr_kit_network:
+    path: ../../packages/jaspr_kit_network
+  jaspr_kit_auth:
+    path: ../../packages/jaspr_kit_auth
+
+  # Pinned to 0.23.1: jaspr_builder >=0.23.2 needs analyzer ^12 → meta ^1.18,
+  # but the Flutter SDK (3.41) pins meta 1.17.0 for the whole workspace
+  # (single lockfile). Bump all jaspr* pins together once Flutter moves on.
+  jaspr: 0.23.1
+  # 0.8.3+ uses jaspr >=0.23.2 APIs (binding.basePath) despite allowing ^0.23.0.
+  jaspr_router: 0.8.2
+  dio: ^5.9.0
+  get_it: ^9.2.0
+  web: ^1.1.0
+  # Browser APIs with VM stubs — for components that must stay testable with jaspr_test.
+  universal_web: ^1.1.0
+
+dev_dependencies:
+  build_runner: ^2.9.0
+  build_web_compilers: ^4.1.0
+  jaspr_builder: 0.23.1
+  jaspr_test: 0.23.1
+  lints: ^6.0.0
+
+jaspr:
+  mode: client
+  # Client mode emits all @css rules into a standalone main.css (see web/index.html).
+  styles: standalone

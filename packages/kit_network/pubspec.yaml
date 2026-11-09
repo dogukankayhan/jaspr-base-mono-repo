@@ -1,0 +1,19 @@
+name: kit_network
+description: Pure-Dart networking — Dio ApiManager, interceptors, Result<T,E>, ApiError. Shared by the Flutter and Jaspr apps.
+version: 0.0.1
+publish_to: none
+resolution: workspace
+
+# PURE DART — must never depend on Flutter or Jaspr. Shared by apps/mobile
+# (Flutter) and apps/web (Jaspr). Enforced by scripts/check_pure_packages.sh.
+environment:
+  sdk: ^3.9.0
+
+dependencies:
+  dio: ^5.9.0
+  get_it: ^9.2.0
+
+dev_dependencies:
+  lints: ^6.0.0
+  test: ^1.25.0
+

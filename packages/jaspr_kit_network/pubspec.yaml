@@ -1,0 +1,17 @@
+name: jaspr_kit_network
+description: Browser adapters for kit_network (NetworkInfo via navigator.onLine). Web twin of flutter_kit_network.
+version: 0.0.1
+publish_to: none
+resolution: workspace
+
+# WEB ONLY (package:web / dart:js_interop) — must never depend on Flutter.
+environment:
+  sdk: ^3.10.0
+
+dependencies:
+  kit_network:
+    path: ../kit_network
+  web: ^1.1.0
+
+dev_dependencies:
+  lints: ^6.0.0

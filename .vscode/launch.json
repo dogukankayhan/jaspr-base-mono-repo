@@ -1,0 +1,52 @@
+{
+    // lib/main.dart has no main() — it only holds mainCommon(). Always launch a
+    // flavor entrypoint (main_<flavor>.dart) together with the matching --flavor,
+    // otherwise the engine fails with "Could not prepare isolate".
+    //
+    // Web (Jaspr) is not launched from here: run `melos run web:serve`.
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "mobile · dev",
+            "cwd": "apps/mobile",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/main_dev.dart",
+            "args": ["--flavor", "dev"]
+        },
+        {
+            "name": "mobile · staging",
+            "cwd": "apps/mobile",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/main_staging.dart",
+            "args": ["--flavor", "staging"]
+        },
+        {
+            "name": "mobile · prod",
+            "cwd": "apps/mobile",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/main_prod.dart",
+            "args": ["--flavor", "prod"]
+        },
+        {
+            "name": "mobile · dev (release mode)",
+            "cwd": "apps/mobile",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/main_dev.dart",
+            "args": ["--flavor", "dev"],
+            "flutterMode": "release"
+        },
+        {
+            "name": "mobile · prod (release mode)",
+            "cwd": "apps/mobile",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/main_prod.dart",
+            "args": ["--flavor", "prod"],
+            "flutterMode": "release"
+        }
+    ]
+}
